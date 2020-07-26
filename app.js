@@ -33,6 +33,10 @@ app.get("/contact",(req,res)=>{
   res.render("contact", {content:  contactContent } );
 });
 
+//COMPOSE
+app.get("/compose",(req,res)=>{
+  res.render("compose", {});
+});
 
 
 
