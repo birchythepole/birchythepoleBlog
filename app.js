@@ -1,3 +1,5 @@
+//jshint esversion:6
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -8,10 +10,17 @@ const aboutContent =
   "Sed imperdiet sodales feugiat. Aenean aliquam faucibus sapien, ac tincidunt tortor vulputate egestas. Sed vestibulum congue ipsum id interdum. Ut at dui quis odio mollis fringilla efficitur sed arcu. Cras vel vestibulum sapien, sit amet condimentum neque. Cras ullamcorper, arcu non dictum convallis, sem ante maximus magna, scelerisque venenatis lorem nibh in urna. Donec blandit dui id tincidunt dignissim. Sed cursus tincidunt erat, quis cursus ipsum dignissim sit amet. Proin sed interdum orci, non volutpat neque. Praesent nulla libero, fermentum id rutrum vel, porta eget orci. Proin volutpat lacus nulla, a mattis dolor pulvinar quis. Nullam id rutrum tellus. Fusce lorem dui, placerat nec posuere et, rutrum sed lectus. Nunc eu lacinia ligula.";
 const contactContent =
   "Sed sit amet sem ut mauris vulputate cursus accumsan vel lorem. Aliquam nec metus non justo faucibus tempus. Pellentesque egestas est velit, at facilisis ligula viverra sit amet. Nunc aliquam, ante quis vehicula varius, dolor magna elementum dolor, a mollis magna sem eu libero. Aliquam nec neque nisl. Nulla consequat arcu euismod turpis cursus gravida. Aliquam mollis tristique finibus. Maecenas a arcu metus. Proin hendrerit venenatis auctor. Quisque urna eros, consequat et tincidunt ac, congue id velit. Vivamus egestas, lorem sit amet efficitur cursus, lacus turpis volutpat ante, id fringilla turpis neque vel dolor.";
-
+const port = 3000;
 const app = express();
 
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+
+
+
+// Server Starter
+app.listen(port,()=>{
+  console.log("Server started on port "+port);
+});
