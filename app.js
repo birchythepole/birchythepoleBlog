@@ -18,9 +18,19 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-//Strona
+//Strona GŁÓWNA
 app.get("/",(req,res)=>{
   res.render("home", {content:  homeStartingContent } );
+});
+
+//ABOUT
+app.get("/about",(req,res)=>{
+  res.render("about", {content:  aboutContent } );
+});
+
+//CONTACT
+app.get("/contact",(req,res)=>{
+  res.render("contact", {content:  contactContent } );
 });
 
 
