@@ -18,6 +18,16 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+//Strona Główna
+app.get("/",(req,res)=>{
+  res.render("home",{});
+});
+
+
+
+
+
+
 
 
 // Server Starter
