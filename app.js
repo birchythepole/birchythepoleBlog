@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
+const posts = [];
+
 const homeStartingContent =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ex vulputate, rhoncus massa non, vehicula ligula. Aliquam blandit non sapien quis hendrerit. Mauris at neque vel nisl porta fringilla nec nec leo. Ut at ex eu urna varius rutrum in non mi. Donec a purus enim. Sed hendrerit ultrices lobortis. Vestibulum tortor dui, auctor quis vehicula ut, dignissim non ante. Praesent et lorem sagittis, congue risus sit amet, faucibus dolor. Fusce facilisis justo et commodo ultricies. Fusce quis mauris vulputate, lacinia odio vitae, ultricies arcu.";
 const aboutContent =
@@ -38,8 +40,12 @@ app.get("/compose",(req,res)=>{
   res.render("compose", {});
 });
 app.post("/compose",(req,res)=>{
-  let newTitle = req.body.postTitle;
-  console.log(newTitle);
+  const newPost = {
+    title: req.body.postTitle,
+    body: req.body.postContent
+  }
+  posts.push(newPost);
+  console.log(posts);
   res.redirect("/compose");
 });
 // Server Starter
