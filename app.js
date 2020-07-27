@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 
-const posts = [];
+let posts = [];
 
 const homeStartingContent =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae ex vulputate, rhoncus massa non, vehicula ligula. Aliquam blandit non sapien quis hendrerit. Mauris at neque vel nisl porta fringilla nec nec leo. Ut at ex eu urna varius rutrum in non mi. Donec a purus enim. Sed hendrerit ultrices lobortis. Vestibulum tortor dui, auctor quis vehicula ut, dignissim non ante. Praesent et lorem sagittis, congue risus sit amet, faucibus dolor. Fusce facilisis justo et commodo ultricies. Fusce quis mauris vulputate, lacinia odio vitae, ultricies arcu.";
@@ -22,7 +22,7 @@ app.use(express.static("public"));
 
 //Strona GŁÓWNA
 app.get("/",(req,res)=>{
-  res.render("home", {content:  homeStartingContent } );
+  res.render("home", {content:  homeStartingContent, newPosts: posts } );
 });
 
 //ABOUT
@@ -45,8 +45,7 @@ app.post("/compose",(req,res)=>{
     body: req.body.postContent
   }
   posts.push(newPost);
-  console.log(posts);
-  res.redirect("/compose");
+  res.redirect("/");
 });
 // Server Starter
 app.listen(port,()=>{

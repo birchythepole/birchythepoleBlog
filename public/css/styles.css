@@ -38,3 +38,6 @@
   background-color: #1abc9c;
   color: #fff;
 }
+.container-fluid p{
+  font-size: 2rem;
+}

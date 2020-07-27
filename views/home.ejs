@@ -3,4 +3,10 @@
 <p>
     <%= content %> 
 </p>
+<div class="container-fluid">
+    <%  for (let i=0; i<newPosts.length; i++){ %>
+        <h1><%= newPosts[i].title %></h1>
+        <p><%= newPosts[i].body %></p>
+        <% } %>
+</div>
 <%- include("partials/footer") %> 
