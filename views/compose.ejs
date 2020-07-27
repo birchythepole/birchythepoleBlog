@@ -1,9 +1,14 @@
-<%- include("partials/header") %> 
+<%- include("partials/header") %>
 
 <h1>NAPISZ ARTYKUŁ</h1>
-<form action="/compose" method="post">
-    <input type="text" name="postTitle" placeholder="" autocomplete="off">
-    <button type="submit" name="button" value="" > Publikuj </button>
+<form class="" action="/compose" method="post">
+    <div class="form-group">
+        <label for="postTitle">Tytuł</label>
+        <input class="form-control" type="text" name="postTitle" placeholder="" autocomplete="off">
+        <label for="postContent">Treść</label>
+        <textarea class="form-control" rows="3" type="text" name="postContent"></textarea>
+        <button class="btn-lg" type="submit" name="button" value=""> Publikuj </button>
+    </div>
 </form>
 
-<%- include("partials/footer") %> 
+<%- include("partials/footer") %>
