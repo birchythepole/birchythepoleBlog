@@ -37,13 +37,11 @@ app.get("/contact",(req,res)=>{
 app.get("/compose",(req,res)=>{
   res.render("compose", {});
 });
-
-
-
-
-
-
-
+app.post("/compose",(req,res)=>{
+  let newTitle = req.body.postTitle;
+  console.log(newTitle);
+  res.redirect("/compose");
+});
 // Server Starter
 app.listen(port,()=>{
   console.log("Server started on port "+port);
