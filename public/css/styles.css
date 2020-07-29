@@ -1,3 +1,7 @@
+body{
+  margin:  0;
+  padding: 0;
+}
 .container-fluid {
   padding-top: 70px;
   padding-bottom: 70px;
@@ -20,9 +24,10 @@
 }
 
 .footer {
-  position: absolute;
+  position: fixed; 
+  bottom: 0; 
+  padding: 1px 0 0 0;
   text-align: center;
-  bottom: 0;
   width: 100%;
   height: 60px;
   background-color: #1abc9c;
@@ -42,7 +47,7 @@
   font-size: 2rem;
 }
 .articles{
-  margin-top: 5%;
+  margin: 5% 0;
   padding: 1% 5% 1% 5%;
   background-color: rgb(226, 226, 226);
   -webkit-box-shadow: 20px 17px 26px 5px rgba(0,0,0,0.9);
