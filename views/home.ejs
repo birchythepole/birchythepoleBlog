@@ -1,12 +1,14 @@
-<%- include("partials/header") %> 
+<%- include("partials/header") %>
 <h1>STRONA GŁÓWNA</h1>
 <p>
-    <%= content %> 
+    <%= content %>
 </p>
-<div class="container-fluid">
-    <%  for (let i=0; i<newPosts.length; i++){ %>
-        <h1><%= newPosts[i].title %></h1>
-        <p><%= newPosts[i].body %></p>
-        <% } %>
-</div>
-<%- include("partials/footer") %> 
+
+<% newPosts.forEach((post)=>{ %>
+    <div class="articles">
+        <h1><%= post.title %></h1>
+        <p><%= post.body %></p>
+    </div>
+    <% }); %>
+
+<%- include("partials/footer") %>

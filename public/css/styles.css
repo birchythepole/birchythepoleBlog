@@ -41,3 +41,11 @@
 .container-fluid p{
   font-size: 2rem;
 }
+.articles{
+  margin-top: 5%;
+  padding: 1% 5% 1% 5%;
+  background-color: rgb(226, 226, 226);
+  -webkit-box-shadow: 20px 17px 26px 5px rgba(0,0,0,0.9);
+-moz-box-shadow: 20px 17px 26px 5px rgba(0,0,0,0.9);
+box-shadow: 20px 17px 26px 5px rgba(0,0,0,0.9);
+}

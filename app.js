@@ -21,33 +21,39 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 //Strona GŁÓWNA
-app.get("/",(req,res)=>{
-  res.render("home", {content:  homeStartingContent, newPosts: posts } );
+app.get("/", (req, res) => {
+  res.render("home", {
+    content: homeStartingContent,
+    newPosts: posts,
+  });
 });
-
 //ABOUT
-app.get("/about",(req,res)=>{
-  res.render("about", {content:  aboutContent } );
+app.get("/about", (req, res) => {
+  res.render("about", { content: aboutContent });
 });
 
 //CONTACT
-app.get("/contact",(req,res)=>{
-  res.render("contact", {content:  contactContent } );
+app.get("/contact", (req, res) => {
+  res.render("contact", { content: contactContent });
 });
 
 //COMPOSE
-app.get("/compose",(req,res)=>{
+app.get("/compose", (req, res) => {
   res.render("compose", {});
 });
-app.post("/compose",(req,res)=>{
+app.post("/compose", (req, res) => {
   const newPost = {
     title: req.body.postTitle,
-    body: req.body.postContent
-  }
+    body: req.body.postContent,
+  };
   posts.push(newPost);
   res.redirect("/");
 });
+//POSTS
+app.get("/posts/:postName",(req,res)=>{
+  console.log(req.params.postName);
+});
 // Server Starter
-app.listen(port,()=>{
-  console.log("Server started on port "+port);
+app.listen(port, () => {
+  console.log("Server started on port " + port);
 });
